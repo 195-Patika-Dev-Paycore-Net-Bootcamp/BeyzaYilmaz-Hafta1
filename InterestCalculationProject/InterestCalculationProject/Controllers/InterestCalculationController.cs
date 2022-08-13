@@ -15,8 +15,8 @@ namespace InterestCalculationProject.Controllers
         {
             
             InterestResponseModel ınterestResponseModel = new InterestResponseModel();
-            ınterestResponseModel.InterestRate = interestModel.InterestRate;
             ınterestResponseModel.TotalBalance = interestModel.Balance * Math.Pow((1 + (interestModel.InterestRate / 100)), interestModel.Maturity);
+            ınterestResponseModel.InterestAmount = ınterestResponseModel.TotalBalance - interestModel.Balance;
             return ınterestResponseModel;
         }
     }
